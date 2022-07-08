@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button button;
     ImageView imageView;
-    TextView textView;
+    TextView textView, textView2;
     int result = 0xFFFFFF;
 
     private static final int REQUEST_CODE = 0;
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.imageView);
         textView = findViewById(R.id.textView);
+        textView2 = findViewById(R.id.textView2);
         button = findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                                             Palette.Swatch dominantSwatch = palette.getDominantSwatch();
                                             result = dominantSwatch.getRgb();
                                             textView.setText(Integer.toString(result, 10));
-
+                                            textView2.setText(Integer.toString(result, 16));
                                         }
                                     });
                                 }
