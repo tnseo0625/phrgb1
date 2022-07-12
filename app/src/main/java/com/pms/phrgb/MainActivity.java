@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button button;
     ImageView imageView;
-    TextView textView, textView2;
+    TextView textView, textView2,textView3;
     int result = 0xFFFFFF;
 
     private static final int REQUEST_CODE = 0;
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         textView = findViewById(R.id.textView);
         textView2 = findViewById(R.id.textView2);
+        textView3 = findViewById(R.id.textView3);
         button = findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +89,18 @@ public class MainActivity extends AppCompatActivity {
             } else if (resultCode == RESULT_CANCELED) {
                 Toast.makeText(getApplicationContext(), "취소되었습니다.", Toast.LENGTH_SHORT).show();
             }
+        }
+        if (result < -16000000)
+        {
+            textView3.setText("염기");
+        }
+        else if (result > -10000000)
+        {
+            textView3.setText("산");
+        }
+        else
+        {
+            textView3.setText("중성");
         }
     }
 
